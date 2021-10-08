@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -58,12 +59,18 @@ public class ProductAdapter extends ArrayAdapter <Product> {
 
     private class ViewHolder{
         final Button addButton, removeButton;
+        final Button add, remove;
         final TextView nameView, countView;
+        final EditText product, number;
         ViewHolder (View view){
             addButton = (Button) view.findViewById(R.id.addButton);
             removeButton = (Button) view.findViewById(R.id.removeButton);
             nameView = (TextView) view.findViewById(R.id.nameView);
             countView = (TextView) view.findViewById(R.id.countView);
+            add = (Button) view.findViewById(R.id.add);
+            remove = (Button) view.findViewById(R.id.remove);
+            product = (EditText) view.findViewById(R.id.product);
+            number = (EditText) view.findViewById(R.id.number);
         }
     }
 }
