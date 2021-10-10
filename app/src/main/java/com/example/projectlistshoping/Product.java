@@ -11,6 +11,9 @@ public class Product {
         this.unit = unit;
     }
 
+    public Product(String name, String toString) {
+    }
+
     public String getName() {
         return name;
     }
