@@ -43,16 +43,8 @@
         app:layout_constraintBottom_toTopOf="@id/productList"
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintLeft_toRightOf="@id/number"
-        app:layout_constraintRight_toLeftOf="@id/remove"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/remove"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="-"
-        app:layout_constraintHorizontal_weight="2"
-        app:layout_constraintLeft_toRightOf="@id/add"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

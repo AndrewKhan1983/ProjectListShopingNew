@@ -18,10 +18,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initDate();
+
+        ProductAdapter.OnProductClickListener productClickListener = new ProductAdapter.OnProductClickListener() {
+            @Override
+            public void onProductClick(Product product, int position) {
+
+            }
+        };
+
         ListView listView = findViewById(R.id.productList);
-        ProductAdapter productAdapter = new ProductAdapter(this, R.layout.list_item, products);
+        ProductAdapter productAdapter = new ProductAdapter(this, R.layout.list_item, products,productClickListener);
         listView.setAdapter(productAdapter);
 
     }

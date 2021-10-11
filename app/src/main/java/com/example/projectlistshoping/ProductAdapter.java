@@ -11,12 +11,17 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
+    interface OnProductClickListener{
+        void onProductClick(Product product,int position);
+    }
+    public final OnProductClickListener onProductClickListener;
     public LayoutInflater inflater;
     public int layout;
     public ArrayList<Product> products;
 
-    ProductAdapter(Context context, int resource, ArrayList<Product> products) {
+    ProductAdapter(Context context, int resource, ArrayList<Product> products,OnProductClickListener onClickListener) {
         super(context, resource, products);
+        this.onProductClickListener = onClickListener;
         this.products = products;
         this.layout = resource;
         this.inflater = LayoutInflater.from(context);
@@ -35,6 +40,12 @@ public class ProductAdapter extends ArrayAdapter<Product> {
 
         viewHolder.nameView.setText(product.name);
         viewHolder.countView.setText(product.count + "  " + product.unit);
+        viewHolder.nameView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onProductClickListener.onProductClick(product,position);
+            }
+        });
 
         viewHolder.addButton.setOnClickListener(new View.OnClickListener() {
             @Override
